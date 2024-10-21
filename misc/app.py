@@ -15,15 +15,15 @@ cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(
     cred,
     {
-        "databaseURL": "<paste here>",
+        "databaseURL": "https://facerecognition-b74ff-default-rtdb.firebaseio.com/",
         # database URL
-        "storageBucket": "<paste here>",
+        "storageBucket": "facerecognition-b74ff.appspot.com",
     },
 )
 
 bucket = storage.bucket()
 
-capture = cv2.VideoCapture(0)
+capture = cv2.VideoCapture(1)
 capture.set(cv2.CAP_PROP_FRAME_WIDTH, 640)  # width .... CAP_PROP_FRAME_WIDTH ---> 3
 capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)  # height .... CAP_PROP_FRAME_HEIGHT ---> 4
 
@@ -54,13 +54,9 @@ counter = 0
 
 while True:
     success, img = capture.read()
-
     # take the encoding and check with the new faces if they are matching or not
-    imgSmall = cv2.resize(
-        img, (0, 0), None, 0.25, 0.25
-    )  # scale values not the actual values # resize to make it computationally viable
-    imgSmall = cv2.cvtColor(
-        imgSmall, cv2.COLOR_BGR2RGB
+    imgSmall = cv2.resize(img, (0, 0), None, 0.25, 0.25 )  # scale values not the actual values # resize to make it computationally viable
+    imgSmall = cv2.cvtColor(imgSmall, cv2.COLOR_BGR2RGB
     )  # because the face recognition system takes the rgb values
 
     faceCurrentFrame = face_recognition.face_locations(
@@ -69,6 +65,9 @@ while True:
     encodeCurrentFrame = face_recognition.face_encodings(
         imgSmall, faceCurrentFrame
     )  # for new faces # we pass the image and current location of the image
+
+    # img_resized = cv2.resize(img, (640, 480))  # Resize ảnh về (480, 640)
+    # img = img_resized
 
     # this should be in top as we are overlaying the rectangle in the imgBackground
     imgBackground[162 : 162 + 480, 55 : 55 + 640] = img

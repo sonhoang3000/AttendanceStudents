@@ -35,13 +35,15 @@ Check out the installation guide video by clicking [HERE](https://www.youtube.co
 - Next, install all the necessary modules and dependencies listed in the requirement.txt file. Keep in mind that some modules might be missing, which could result in an error but a simple google search will fix your problem.
 - Next, proceed to set up your Firebase account. Download the required credentials from Firebase and save them as **serviceAccountKey.json**.
 - Create a Realtime database in the firebase. This will be our main database. Copy the database link which will be at the top.
-- Paste it in where ever you see this tag: **"databaseURL": "<paste here>"** That will be 3 files:
+- Paste it in where ever you see this tag: **"databaseURL": "https://facerecognition-b74ff-default-rtdb.firebaseio.com/"** That will be 3 files:
+
 1. webapp.py
 2. initial_database.py
 3. initial_encoder.py
+
 - Locate the **initial_database.py** file in the misc directory. If your setup and credentials are correct, the script will add the data to the database.
 - Check the realtime database which we have created and see if has been populated with the data we sent it with.
-- Once you've created the database, make a normal storage bucket in the firebase. Same a the realtime database we will be needing the URL for the database. Copy it and paste it in where ever you see, **"storageBucket": "<paste here>"** tag which will be in initial_encoder.py and webapp.py files.
+- Once you've created the database, make a normal storage bucket in the firebase. Same a the realtime database we will be needing the URL for the database. Copy it and paste it in where ever you see, **"storageBucket": "facerecognition-b74ff.appspot.com"** tag which will be in initial_encoder.py and webapp.py files.
 - Remove the gs:// from the URL.
 - Run the **initial_encoding.py** Python file. Ensure that you've placed the image file in the **static/Files/Image** directory and named it with the corresponding user ID from the database and the image should be in .png format. This allows us to associate user images with their unique identification numbers. Additionally, this encoding step will generate a pickle file used for the face recognition model.
 - With the previous steps completed, execute the **webapp.py** script. If all the credentials and dependencies are correctly set up, the web application should start running. You can refer to the **[demo video](https://youtu.be/Zc-t0mjkiWk)** for a visual representation.

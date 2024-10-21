@@ -6,7 +6,7 @@ cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(
     cred,
     {
-        "databaseURL": "<paste here>",
+        "databaseURL": "https://facerecognition-b74ff-default-rtdb.firebaseio.com/",
         # database URL
     },
 )
@@ -33,6 +33,22 @@ data = {
         "content": "This section aims to offer essential guidance for students to successfully complete the course. It will be regularly updated \
                 to ensure its relevance and usefulness. Stay tuned for valuable \
                 insights and tips that will help you excel in your studies.",
+    },
+    "135795": { 
+        "id": "135795",
+        "name": "Nguyễn Thị Xuân Mai",
+        "password": "135795",
+        "dob": "7-03-2004",
+        "address": "Quận 12",
+        "phone": "123456789",
+        "email": "congaxuanmai@gmail.com",
+        "major": "Công Nghệ Thông Tin",
+        "starting_year": 2022,
+        "standing": "Hạng bét",
+        "total_attendance": 4,
+        "year": 3,
+        "last_attendance_time": "2023-02-21 12:33:10",
+        "content": "Dù cuộc sống có ra sao, tao vẫn mãi bịp vì tao là vua bịp, You shold know me who is BỊP THỦ",
     },
 }
 
