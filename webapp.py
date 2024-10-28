@@ -13,9 +13,7 @@ from firebase_admin import credentials
 from firebase_admin import db
 from firebase_admin import storage
 
-
 app = Flask(__name__)  # initializing
-
 
 # database credentials
 cred = credentials.Certificate("serviceAccountKey.json")
@@ -54,7 +52,7 @@ def generate_frame():
     capture.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-    imgBackground = cv2.imread("static/Files/Resources/background.png")
+    imgBackground = cv2.imread("static/Files/Resources/backgroundVision.png")
 
     folderModePath = "static/Files/Resources/Modes/"
     modePathList = os.listdir(folderModePath)
@@ -88,6 +86,9 @@ def generate_frame():
             encodeCurrentFrame = face_recognition.face_encodings(
                 imgSmall, faceCurrentFrame
             )
+
+            img_resized = cv2.resize(img, (640, 480))  # Resize ảnh về (480, 640)
+            img = img_resized
 
             imgBackground[162 : 162 + 480, 55 : 55 + 640] = img
             imgBackground[44 : 44 + 633, 808 : 808 + 414] = imgModeList[modeType]
