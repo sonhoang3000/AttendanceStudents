@@ -57,7 +57,7 @@
           <div class="card shadow-sm">
             <div class="card-header bg-transparent border-0">
               <h3 class="mb-0">
-                <i class="far fa-clone pr-1"></i>Thông tin tổng quan
+                <i class="far fa-clone pr-1"></i>General Information
               </h3>
             </div>
             <div class="card-body pt-0">
@@ -67,8 +67,16 @@
                   <td>{{ data.studentInfo.major }}</td>
                 </tr>
                 <tr>
-                  <th width="30%">Năm bắt đầu học- Khoá</th>
+                  <th width="30%">Năm bắt đầu học</th>
                   <td>{{ data.studentInfo.starting_year }}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Học lực hiện tại</th>
+                  <td>{{ data.studentInfo.standing }}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Sinh viên năm: </th>
+                  <td>{{ data.studentInfo.year }}</td>
                 </tr>
                 <tr>
                   <th width="30%">Tổng lần điểm danh</th>

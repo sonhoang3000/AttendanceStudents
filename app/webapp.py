@@ -92,9 +92,7 @@ def generate_frame():
             imgBackground[44 : 44 + 633, 808 : 808 + 414] = imgModeList[modeType]
 
             if faceCurrentFrame:
-                for encodeFace, faceLocation in zip(
-                    encodeCurrentFrame, faceCurrentFrame
-                ):
+                for encodeFace, faceLocation in zip(encodeCurrentFrame, faceCurrentFrame):
                     matches = face_recognition.compare_faces(encodedFaceKnown, encodeFace)
                     faceDistance = face_recognition.face_distance(encodedFaceKnown, encodeFace)
 

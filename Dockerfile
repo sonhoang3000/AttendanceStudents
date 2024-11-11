@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.12-alpine
 
 # Install CMake và các gói khác để sử dụng building wheel for dlib 
 RUN apt-get update && apt-get install -y \

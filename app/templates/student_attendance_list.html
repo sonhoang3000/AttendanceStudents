@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Điểm danh sinh viên ngày hôm nay </title>
+  <title>Điểm danh ngày hôm nay</title>
   <link href="{{ url_for('static', filename='styles/admin.css') }}" rel="stylesheet" type="text/css" />
 </head>
 
@@ -15,17 +15,16 @@
         <button class="home_button" onclick="window.location.href='/'">
           Home
         </button>
-        <h1>Điểm danh sinh viên ngày hôm nay </h1>
-        <button onclick="window.location.href='/download_attendance'">Download Excel</button>
+        <h1>Điểm danh ngày hôm nay</h1>
         <table class="table">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Tên</th>
+              <th>Name</th>
               <th>Chuyên Ngành</th>
               <th>Tổng số lần điểm danh</th>
               <th>Thời gian điểm danh lần cuối</th>
-              <th>Year</th>
+              <th>Sinh viên năm</th>
             </tr>
           </thead>
           {% for i in range(data|length) %}
